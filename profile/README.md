@@ -6,6 +6,8 @@ This project orchestrates a distributed system for processing and analyzing Comm
 
 ## Architecture
 
+![Architecture Diagram](Architecture.jpg)
+
 ### Data Processing
 
 The system employs a custom Kubernetes operator to monitor the [official CVE List V5](https://github.com/CVEProject/cvelistV5) GitHub repository for hourly CVE data releases. When a new release is detected, the operator triggers a resilient data processing pipeline. Kafka is used for fault-tolerant data streaming, efficiently distributing CVE data to consumers for processing.

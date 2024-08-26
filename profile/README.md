@@ -6,7 +6,7 @@ This project orchestrates a distributed system for processing and analyzing Comm
 
 ## Architecture
 
-![Architecture Diagram](Architecture.JPG)
+![Architecture Diagram](ArchitectureDiagram.JPG)
 
 ### Data Processing
 

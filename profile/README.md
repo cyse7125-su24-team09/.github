@@ -1,4 +1,4 @@
-# ArchOps: CVE Data Processing and Analytics System
+# ArchOps: CVE Data System
 
 ## Overview
 

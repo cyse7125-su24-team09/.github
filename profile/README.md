@@ -90,3 +90,8 @@ The system adheres to the Principle of Least Privilege (PoLP) by implementing IA
 ## Deployment
 
 Deployment is automated using Helm for Kubernetes application deployment and Terraform for infrastructure provisioning. Jenkins handles CI/CD pipelines, including Docker image builds and semantic versioning for applications and Helm packages.
+
+## Contributors
+
+- [Pritesh Nimje](https://github.com/PriteshNU)
+- [Nitesh More](https://github.com/Nitesh-NEU)

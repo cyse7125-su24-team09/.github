@@ -36,7 +36,7 @@ The ETL pipeline efficiently manages CVE data through a three-step process:
 
 1. **Extraction**: CVE data is extracted from PostgreSQL, ensuring that the most up-to-date and relevant information is used.
 
-2. **Transformation**: The extracted data is transformed into high-dimensional embeddings using the `thenlper/gte-small` model from Hugging Face. This transformation encodes the data into a format suitable for similarity searches.
+2. **Transformation**: The extracted data is transformed into embeddings using the `thenlper/gte-small` model from Hugging Face. This transformation encodes the data into a format suitable for similarity searches.
 
 3. **Loading**: The transformed embeddings are then loaded into Elasticsearch, making the data accessible for the Retrieval-Augmented Generation (RAG) pipeline.
 
@@ -55,14 +55,13 @@ The RAG pipeline leverages Elasticsearch and a self-hosted Large Language Model 
 Istio is used as the service mesh to manage traffic flow, enforce security policies, and facilitate service discovery throughout the Kubernetes cluster.
 
 
-### Logging
+### Observability
 
-Fluentbit is used to collect and aggregate logs from across the cluster, forwarding them to AWS CloudWatch for centralized monitoring and comprehensive analysis.
+- **Logging**: Fluentbit is used to collect and aggregate logs from across the cluster, forwarding them to AWS CloudWatch for centralized monitoring and comprehensive analysis.
 
+- **Monitoring**: Prometheus is used to monitor metrics of the Kubernetes cluster and operational microservices. Grafana is used to visualize these metrics in real-time through interactive dashboards, offering insights into system performance, health, and operational status.
 
-### Monitoring
-
-Prometheus is used to monitor metrics of the Kubernetes cluster and operational microservices. Grafana is used to visualize these metrics in real-time through interactive dashboards, offering insights into system performance, health, and operational status.
+- **Tracing**: Jaeger is used for distributed tracing, with Elasticsearch as the data store. This setup enables efficient analysis of trace data, aiding in performance monitoring and debugging across the cluster.
 
 
 ## Design and Implementation Considerations
@@ -92,8 +91,3 @@ The system adheres to the Principle of Least Privilege (PoLP) by implementing IA
 ## Deployment
 
 Deployment is automated using Helm for Kubernetes application deployment and Terraform for infrastructure provisioning. Jenkins handles CI/CD pipelines, including Docker image builds and semantic versioning for applications and Helm packages.
-
-## Contributors
-
-- [Pritesh Nimje](https://github.com/PriteshNU)
-- [Nitesh More](https://github.com/Nitesh-NEU)
